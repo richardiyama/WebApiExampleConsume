@@ -1,0 +1,30 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Search</title>
+</head>
+<body>
+    @using (Html.BeginForm("Search", "Product"))
+    {
+        <span>ID</span> <input type="text" name="id" /> <input type="submit" value="Search" />
+
+        if (ViewBag.result != null)
+        {
+            <br />
+
+        <span>ID: @ViewBag.result.ID</span>
+        <br />
+        <span>Name: @ViewBag.result.Name</span>
+        <br />
+        <span>Price: @ViewBag.result.Price</span>
+        }
+    }
+</body>
+</html>
